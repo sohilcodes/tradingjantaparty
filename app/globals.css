@@ -1,0 +1,618 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #020507;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.page {
+  width: min(100%, 1050px);
+  margin: auto;
+  min-height: 100vh;
+  padding: 18px 20px 100px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #10283c 0%,
+      #050a10 38%,
+      #020406 75%
+    );
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid #1cff91;
+  background: #06130e;
+  color: #ffc21b;
+  font-size: 30px;
+  box-shadow: 0 0 28px #19ed8c33;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 1000;
+}
+
+.brand h1 span {
+  color: #ffc21b;
+}
+
+.brand p {
+  margin: 3px 0 0;
+  color: #8290a1;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.live {
+  border: 1px solid #166b57;
+  padding: 9px 13px;
+  border-radius: 30px;
+  color: #36ee99;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.live i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #36ee99;
+  box-shadow: 0 0 12px #36ee99;
+}
+
+.marketCard,
+.result,
+.historyCard,
+.vipCard {
+  border: 1px solid #153b61;
+  border-radius: 17px;
+  background: linear-gradient(180deg, #07121e, #04090e);
+  box-shadow: 0 15px 35px #0008;
+}
+
+.marketCard {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: center;
+  padding: 14px;
+}
+
+.pairBox,
+.expiryBox,
+.priceBox {
+  padding: 0 15px;
+  border-right: 1px solid #183650;
+}
+
+.priceBox {
+  border: 0;
+}
+
+.marketCard small {
+  display: block;
+  color: #7e8da0;
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+
+.pairBox select {
+  width: 100%;
+  max-width: 230px;
+  border: 0;
+  outline: 0;
+  color: white;
+  background: transparent;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pairBox option {
+  background: #07101a;
+}
+
+.pairBox span {
+  color: #5d7188;
+  font-size: 8px;
+}
+
+.marketCard strong {
+  font-size: 15px;
+}
+
+.signalSection {
+  padding: 22px 5px 10px;
+  background:
+    radial-gradient(
+      circle at center,
+      #0c3a26 0%,
+      transparent 45%
+    );
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 1000;
+  margin-bottom: 10px;
+}
+
+.signalLayout {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  align-items: center;
+  gap: 25px;
+}
+
+.signalSticker {
+  width: min(100%, 390px);
+  height: 165px;
+  margin: auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-3deg);
+  border: 2px solid #36ff9d;
+  box-shadow:
+    0 0 35px #18e8873d,
+    inset 0 0 30px #ffffff18;
+}
+
+.signalSticker .arrow {
+  font-size: 22px;
+}
+
+.signalSticker strong {
+  font-size: 52px;
+  line-height: 1;
+  font-style: italic;
+}
+
+.signalSticker small {
+  margin-top: 9px;
+  font-size: 10px;
+}
+
+.signalSticker b {
+  font-size: 23px;
+  margin-top: 4px;
+}
+
+.call {
+  background: linear-gradient(145deg, #2af69c, #07864d);
+  color: #02150c;
+}
+
+.put {
+  background: linear-gradient(145deg, #ff586e, #991329);
+  border-color: #ff6d7e;
+  color: white;
+}
+
+.wait {
+  background: linear-gradient(145deg, #2a3948, #101923);
+  border-color: #748ba1;
+  color: white;
+}
+
+.timerCircle {
+  width: 170px;
+  height: 170px;
+  margin: auto;
+  border-radius: 50%;
+  border: 7px solid #18e68b;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  box-shadow: 0 0 35px #18e88733;
+}
+
+.timerCircle strong {
+  font-size: 35px;
+}
+
+.timerCircle small {
+  color: #99a8b8;
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.result div {
+  padding: 0 15px;
+}
+
+.actionArea {
+  margin: 13px 0;
+}
+
+.signalButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  border: 1px solid #0fc777;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #063c27, #07141e);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 28px #0fc7771c;
+}
+
+.signalButton > span {
+  font-size: 27px;
+  color: #1df294;
+}
+
+.signalButton div {
+  flex: 1;
+  text-align: left;
+}
+
+.signalButton strong {
+  display: block;
+  color: #1df294;
+  font-size: 17px;
+}
+
+.signalButton small {
+  display: block;
+  color: #8594a6;
+  margin-top: 3px;
+}
+
+.signalButton > b {
+  font-size: 25px;
+  color: #9eb0c4;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #153b61;
+  background: #050b12;
+  border-radius: 15px;
+  margin-bottom: 14px;
+}
+
+.stats div {
+  padding: 14px;
+  border-right: 1px solid #15304a;
+}
+
+.stats div:last-child {
+  border: 0;
+}
+
+.stats small {
+  display: block;
+  color: #7f8da0;
+  font-size: 8px;
+}
+
+.stats strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.green {
+  color: #1bf094 !important;
+}
+
+.red {
+  color: #ff526b !important;
+}
+
+.historyCard {
+  padding: 15px;
+}
+
+.historyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.historyHeader h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.historyHeader span {
+  color: #8492a4;
+  font-size: 9px;
+}
+
+.empty {
+  padding: 25px;
+  text-align: center;
+  color: #718196;
+  font-size: 11px;
+}
+
+.historyRow {
+  display: grid;
+  grid-template-columns: 2fr .7fr .7fr;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 3px;
+  border-top: 1px solid #132b40;
+  margin-top: 5px;
+}
+
+.historyRow small {
+  display: block;
+  color: #6f8093;
+  margin-top: 3px;
+}
+
+.badge {
+  padding: 7px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.callBadge {
+  background: #073d28;
+  color: #31ef9a;
+}
+
+.putBadge {
+  background: #42131d;
+  color: #ff6b7e;
+}
+
+.vipCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 17px;
+  margin-top: 14px;
+  border-color: #10ad69;
+  background: linear-gradient(90deg, #06180f, #07131c, #19090d);
+}
+
+.vipIcon {
+  font-size: 42px;
+  color: #ffc21b;
+}
+
+.vipCard div:nth-child(2) {
+  flex: 1;
+}
+
+.vipCard small {
+  display: block;
+  color: #ffc21b;
+  font-size: 8px;
+}
+
+.vipCard strong {
+  display: block;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+.vipCard p {
+  margin: 4px 0 0;
+  color: #8391a2;
+  font-size: 8px;
+}
+
+.vipCard button {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 17px;
+  background: #19eb89;
+  color: #03150d;
+  font-weight: 1000;
+}
+
+footer {
+  padding: 18px;
+  text-align: center;
+  color: #5f6d7e;
+  font-size: 9px;
+}
+
+footer span {
+  color: #ffc21b;
+}
+
+.bottomNav {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1050px, 100%);
+  height: 68px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 6px 12px;
+  background: #040a11f5;
+  border-top: 1px solid #16334d;
+  backdrop-filter: blur(15px);
+}
+
+.bottomNav div {
+  text-align: center;
+  padding: 4px;
+  color: #8190a3;
+  border-radius: 10px;
+}
+
+.bottomNav .active {
+  color: #1bf094;
+  background: #061c14;
+}
+
+.bottomNav b {
+  display: block;
+  font-size: 21px;
+}
+
+.bottomNav small {
+  font-size: 8px;
+}
+
+@media (max-width: 650px) {
+
+  .page {
+    padding: 10px 8px 90px;
+  }
+
+  .logo {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .brand h1 {
+    font-size: 17px;
+  }
+
+  .brand p {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .live {
+    font-size: 7px;
+    padding: 7px;
+  }
+
+  .marketCard {
+    grid-template-columns: 1.5fr .8fr .8fr;
+    padding: 9px;
+  }
+
+  .pairBox,
+  .expiryBox,
+  .priceBox {
+    padding: 0 6px;
+  }
+
+  .pairBox select {
+    font-size: 11px;
+  }
+
+  .marketCard strong {
+    font-size: 10px;
+  }
+
+  .signalLayout {
+    grid-template-columns: 1fr 95px;
+    gap: 6px;
+  }
+
+  .signalSticker {
+    height: 110px;
+    border-radius: 21px;
+  }
+
+  .signalSticker strong {
+    font-size: 31px;
+  }
+
+  .signalSticker small {
+    font-size: 7px;
+  }
+
+  .signalSticker b {
+    font-size: 16px;
+  }
+
+  .timerCircle {
+    width: 92px;
+    height: 92px;
+    border-width: 4px;
+  }
+
+  .timerCircle strong {
+    font-size: 19px;
+  }
+
+  .timerCircle small {
+    font-size: 7px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats div {
+    border-right: 0;
+    border-bottom: 1px solid #15304a;
+  }
+
+  .result {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vipCard {
+    padding: 9px;
+    gap: 7px;
+  }
+
+  .vipIcon {
+    font-size: 28px;
+  }
+
+  .vipCard strong {
+    font-size: 10px;
+  }
+
+  .vipCard button {
+    padding: 8px 10px;
+    font-size: 8px;
+  }
+}
